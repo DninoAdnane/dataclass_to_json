@@ -1,0 +1,10 @@
+.venv*
+.eggs/
+build/
+.cache/
+*.pyc
+*.swp
+*.egg
+dataclass_to_json.egg-info/
+
+dist

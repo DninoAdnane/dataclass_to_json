@@ -1,0 +1,33 @@
+[project]
+name = "dataclass_to_json"
+version = "0.1.0"
+authors = [
+  { name="Adnane Guettaf", email="adnane.guettaf@gmail.com" },
+]
+license = { file = "LICENCE"}
+description = "Convert a dataclass structure to a JSON object"
+dynamic = ["dependencies"]
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12"
+]
+maintainers = [
+    {name = "Adnane Guettaf", email = "adnane.guettaf@gmail.com" },
+]
+
+[tools.setuptools]
+packages = ["src"]
+
+[project.urls]
+Homepage = "https://github.com/DninoAdnane/dataclass_to_json"
+Issues = "https://github.com/DninoAdnane/dataclass_to_json/issues"

@@ -25,6 +25,10 @@ maintainers = [
     {name = "Adnane Guettaf", email = "adnane.guettaf@gmail.com" },
 ]
 
+[build-system]
+requires = ["setuptools>=60.10.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [tools.setuptools]
 packages = ["src"]
 

@@ -1,3 +1,4 @@
+import re
 from typing import get_type_hints
 
 
@@ -17,7 +18,18 @@ def dataclass_to_json(pydantic_cls):
                     field_structure = [dataclass_to_json(inner_type)]
             else:
                 field_structure = str(field_type).replace("typing.", "")
-                if not field_structure.startswith("Literal"):
+                if any(
+                    field_structure.startswith(type_)
+                    for type_ in ["List", "Sequence"]
+                ):
+                    try:
+                        field_structure = re.findall(
+                            r"\[(.*?)\]", field_structure
+                        )[0]
+                        field_structure = [field_structure]
+                    except IndexError:
+                        return {}
+                elif not field_structure.startswith("Literal"):
                     field_structure = (
                         str(inner_type)
                         .replace("<class '", "")
